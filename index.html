@@ -56,9 +56,21 @@
       padding: 2rem;
     }
     /* Style for the Google Map to match the dark theme */
+    <style>
+    /* ... all other styles are the same ... */
+
+    /* Style for the Google Map to match the dark theme */
     .map-iframe {
-      filter: grayscale(1) invert(0.9) contrast(0.9);
-      border-radius: 1.5rem;
+      /* The filter property that made it black & white has been removed. */
+      border-radius: 1rem; /* Slightly smaller radius to fit inside the frame */
+    }
+    .map-frame {
+        padding: 1rem; /* Creates the "frame" effect */
+    }
+
+    /* ... rest of the styles ... */
+</style>
+
     }
     /* FAQ Accordion Styling */
     .faq-answer {
