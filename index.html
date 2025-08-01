@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +55,21 @@
       border-radius: 1.5rem;
       padding: 2rem;
     }
+    /* Style for the Google Map to match the dark theme */
+    .map-iframe {
+      filter: grayscale(1) invert(0.9) contrast(0.9);
+      border-radius: 1.5rem;
+    }
+    /* FAQ Accordion Styling */
+    .faq-answer {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+    .faq-answer.open {
+        max-height: 1000px; /* Set a large enough value */
+        transition: max-height 1s ease-in-out;
+    }
   </style>
 </head>
 <body class="text-white relative">
@@ -66,7 +82,9 @@
     </a>
     <div id="desktop-menu" class="hidden sm:flex space-x-6 text-sm font-medium items-center">
       <a href="#services" class="hover:text-pink-400 transition">Services</a>
-      <a href="#about" class="hover:text-pink-400 transition">About</a>
+      <a href="#why-us" class="hover:text-pink-400 transition">Why Us</a>
+      <a href="#testimonials" class="hover:text-pink-400 transition">Reviews</a>
+      <a href="#area" class="hover:text-pink-400 transition">Area</a>
       <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
       <a href="/blog.html" class="text-pink-400 font-semibold border border-pink-400 px-4 py-2 rounded-lg transition hover:bg-pink-400 hover:text-white ml-2">
         Blog
@@ -76,7 +94,9 @@
   </div>
   <div id="mobile-menu" class="hidden sm:hidden px-4 pt-2 pb-4 space-y-2">
     <a href="#services" class="block py-2 hover:text-pink-400 transition">Services</a>
-    <a href="#about" class="block py-2 hover:text-pink-400 transition">About</a>
+    <a href="#why-us" class="block py-2 hover:text-pink-400 transition">Why Us</a>
+    <a href="#testimonials" class="block py-2 hover:text-pink-400 transition">Reviews</a>
+    <a href="#area" class="block py-2 hover:text-pink-400 transition">Service Area</a>
     <a href="#contact" class="block py-2 hover:text-pink-400 transition">Contact</a>
     <a href="/blog.html" class="block py-2 text-pink-400 font-semibold">Blog</a>
   </div>
@@ -104,7 +124,7 @@
 
 <section id="services" class="py-20 px-4">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-extrabold text-center mb-12" data-aos="fade-up">Our Services</h2>
+    <h2 class="text-4xl font-extrabold text-center mb-12" data-aos="fade-up">Our Core Services</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="aura-card text-center" data-aos="fade-up" data-aos-delay="100">
         <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg></div>
@@ -114,7 +134,7 @@
       <div class="aura-card text-center" data-aos="fade-up" data-aos-delay="200">
         <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
         <h3 class="text-2xl font-bold mb-3">Commercial Cleaning</h3>
-        <p class="text-gray-400">Professional cleaning services for offices, retail spaces, and other commercial properties. Create a clean, healthy environment.</p>
+        <p class="text-gray-400">Professional cleaning for offices and retail. Create a clean, healthy environment for your employees and customers.</p>
       </div>
       <div class="aura-card text-center" data-aos="fade-up" data-aos-delay="300">
         <div class="flex justify-center mb-4"><svg class="w-12 h-12 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg></div>
@@ -125,23 +145,116 @@
   </div>
 </section>
 
-<section id="about" class="py-20 px-4">
-  <div class="glass-panel max-w-4xl mx-auto p-8 md:p-12" data-aos="fade-right">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-      <div class="md:col-span-1 flex justify-center">
-        <img src="https://via.placeholder.com/250" alt="Stephanie Kirkley" class="rounded-full w-48 h-48 md:w-full md:h-auto object-cover border-4 border-pink-500/50 shadow-lg">
+<section id="why-us" class="py-20 px-4 bg-black/20">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-extrabold text-center mb-12" data-aos="fade-up">The Difference is in the Details</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex justify-center items-center mb-4 w-20 h-20 mx-auto bg-gray-800 rounded-full border border-pink-500/30"><svg class="w-10 h-10 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+        <h3 class="text-xl font-bold mb-2">Owner-Led Quality</h3>
+        <p class="text-gray-400">Stephanie personally oversees projects to ensure the highest standards are met, every single time.</p>
       </div>
-      <div class="md:col-span-2">
-        <h2 class="text-3xl font-extrabold mb-4">A Passion for Perfection</h2>
-        <p class="text-gray-300 mb-4">
-          Hi, I'm Stephanie. With over 15 years in the business, I started this company because I believe a clean and organized space is essential for a happy life. My team and I are personally invested in every job.
-        </p>
-        <p class="text-gray-300">
-          Being owner-led means you get the highest standard of quality and accountability. We serve our community in Wetumpka and Montgomery with pride, treating every home and business as if it were our own.
-        </p>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex justify-center items-center mb-4 w-20 h-20 mx-auto bg-gray-800 rounded-full border border-pink-500/30"><svg class="w-10 h-10 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01"></path></svg></div>
+        <h3 class="text-xl font-bold mb-2">Transparent Pricing</h3>
+        <p class="text-gray-400">No hidden fees or surprises. We provide clear, upfront quotes so you know exactly what to expect.</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-center items-center mb-4 w-20 h-20 mx-auto bg-gray-800 rounded-full border border-pink-500/30"><svg class="w-10 h-10 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+        <h3 class="text-xl font-bold mb-2">Reliable & On-Time</h3>
+        <p class="text-gray-400">We respect your time. Our team is punctual, professional, and efficient, working around your schedule.</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex justify-center items-center mb-4 w-20 h-20 mx-auto bg-gray-800 rounded-full border border-pink-500/30"><svg class="w-10 h-10 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></div>
+        <h3 class="text-xl font-bold mb-2">Customized Plans</h3>
+        <p class="text-gray-400">Every space is unique. We listen to your needs and create a cleaning plan tailored specifically to you.</p>
       </div>
     </div>
   </div>
+</section>
+
+
+<section id="testimonials" class="py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-extrabold mb-12" data-aos="fade-up">What Our Clients Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-panel p-8 text-left" data-aos="fade-right">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full mr-4 border-2 border-pink-400" alt="Client 1">
+                    <div>
+                        <h4 class="font-bold text-lg">Sarah W.</h4>
+                        <p class="text-sm text-gray-400">Montgomery, AL</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 italic">"Stephanie is a lifesaver! Our house has never looked better. Her attention to detail is incredible. I can finally relax on the weekends instead of worrying about cleaning."</p>
+            </div>
+            <div class="glass-panel p-8 text-left" data-aos="fade-left">
+                <div class="flex items-center mb-4">
+                    <img src="https://via.placeholder.com/50" class="w-12 h-12 rounded-full mr-4 border-2 border-pink-400" alt="Client 2">
+                    <div>
+                        <h4 class="font-bold text-lg">Mark Chen</h4>
+                        <p class="text-sm text-gray-400">Wetumpka, AL</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 italic">"We hired them for our office space, and the difference is night and day. Professional, reliable, and the team is so friendly. Highly recommend for any business."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="area" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-extrabold mb-4">Proudly Serving the River Region</h2>
+                <p class="text-gray-300 text-lg mb-6">We provide top-tier cleaning and organizing services to our local communities. If you're in or around these areas, we've got you covered.</p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="aura-tag text-base"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>Wetumpka</span>
+                    <span class="aura-tag text-base"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>Montgomery</span>
+                    <span class="aura-tag text-base"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>Prattville</span>
+                    <span class="aura-tag text-base"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>Millbrook</span>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215324.9529524588!2d-86.49079543592231!3d32.46321287175442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888e8a6f37b38583%3A0x447293e54b43640d!2sMontgomery%2C%20AL!5e0!3m2!1sen!2sus!4v1661541318042!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="py-20 px-4 bg-black/20">
+    <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-12" data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="aura-card p-0 overflow-hidden">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                    <span class="text-lg font-semibold">Are you fully insured and bonded?</span>
+                    <span class="faq-icon text-pink-400 transform transition-transform duration-300">&plus;</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="p-6 pt-0 text-gray-400">Yes, absolutely. For your peace of mind and our protection, we are fully insured and bonded. We take the safety and security of your property very seriously.</p>
+                </div>
+            </div>
+            <div class="aura-card p-0 overflow-hidden">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                    <span class="text-lg font-semibold">Do I need to provide cleaning supplies?</span>
+                    <span class="faq-icon text-pink-400 transform transition-transform duration-300">&plus;</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="p-6 pt-0 text-gray-400">No, we bring all our own high-quality, professional-grade cleaning supplies and equipment. If you have a specific product you'd like us to use, just let us know!</p>
+                </div>
+            </div>
+            <div class="aura-card p-0 overflow-hidden">
+                <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                    <span class="text-lg font-semibold">What are your payment methods?</span>
+                    <span class="faq-icon text-pink-400 transform transition-transform duration-300">&plus;</span>
+                </button>
+                <div class="faq-answer">
+                    <p class="p-6 pt-0 text-gray-400">We aim to make payment as easy as possible. We accept major credit cards, Zelle, Venmo, and cash. Payment is typically due upon completion of the service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="py-20 px-4">
@@ -152,11 +265,11 @@
       <form action="#" method="POST" class="space-y-6 text-left">
         <div>
           <label for="name" class="text-sm font-medium text-gray-300">Full Name</label>
-          <input type="text" name="name" id="name" class="mt-1 block w-full bg-gray-900/50 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
+          <input type="text" name="name" id="name" autocomplete="name" class="mt-1 block w-full bg-gray-900/50 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
         </div>
         <div>
           <label for="email" class="text-sm font-medium text-gray-300">Email Address</label>
-          <input type="email" name="email" id="email" class="mt-1 block w-full bg-gray-900/50 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
+          <input type="email" name="email" id="email" autocomplete="email" class="mt-1 block w-full bg-gray-900/50 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-pink-500 focus:border-pink-500">
         </div>
         <div>
           <label for="message" class="text-sm font-medium text-gray-300">How can we help?</label>
@@ -176,8 +289,8 @@
   <p class="text-gray-500 text-sm">&copy; 2025 Stephanie Kirkley Cleaning & Organizing. All Rights Reserved.</p>
 </footer>
 
-
 <script>
+  // Initialize Animate on Scroll library
   AOS.init({
     duration: 900,
     once: true,
@@ -187,9 +300,27 @@
   // Mobile Menu Toggle
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-
   mobileMenuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
+  });
+
+  // FAQ Accordion
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('.faq-icon');
+
+        answer.classList.toggle('open');
+        
+        if (answer.classList.contains('open')) {
+            icon.textContent = '−';
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            icon.textContent = '+';
+            icon.style.transform = 'rotate(0deg)';
+        }
+    });
   });
 </script>
 </body>
